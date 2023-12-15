@@ -1,0 +1,11 @@
+lib/
+target/
+.classpath
+.project
+grailsw
+grailsw.bat
+.idea/
+.settings/
+.slcache/
+target-eclipse/
+wrapper/
