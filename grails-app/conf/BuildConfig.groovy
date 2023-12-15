@@ -47,6 +47,17 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
+        build('org.grails:grails-docs:2.3.7') {
+            excludes 'itext'
+        }
+
+        compile 'commons-codec:commons-codec:1.7'
+        compile "org.owasp.antisamy:antisamy:1.5.7"
+        compile "org.hibernate:hibernate-validator:5.1.2.Final"
+        compile 'commons-fileupload:commons-fileupload:1.3.3'
+        compile 'org.bouncycastle:bcprov-jdk15on:1.60'
+        compile 'org.bouncycastle:bcmail-jdk15on:1.60'
+        compile "com.systex.tbs:tbs-report:1.4"
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
@@ -55,7 +66,9 @@ grails.project.dependency.resolution = {
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:7.0.55"
+        build (':tomcat:7.0.55') {
+            export = false
+        }
 
         // plugins for the compile step
         //compile ":scaffolding:2.1.2"
