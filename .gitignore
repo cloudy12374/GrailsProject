@@ -9,3 +9,7 @@ grailsw.bat
 .slcache/
 target-eclipse/
 wrapper/
+grails-app/assets/images
+grails-app/i18n
+web-app/WEB-INF/tld
+grails-app/conf/DataSource.groovy
