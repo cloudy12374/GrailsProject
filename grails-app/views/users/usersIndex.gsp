@@ -16,6 +16,48 @@
 
 
     <body>
+        <script type="text/javascript">
+
+            var tool=new DataTable2();
+            var dataTable = {};
+            var eventMap = {};
+            
+            function test() {
+                console.log(123)
+            }
+            
+            $(function () {
+                init();
+            })
+            
+            function init() {
+                var search=function(){
+                    list();
+                };
+                var properties = {};
+                var title=['id','姓名','E-Mail位址', '權限'];
+                var columns=["id","userName","noticeAddress","exceptionDesc"];
+                var orderCol=["noOrder","noOrder","noOrder","noOrder"];
+                var widthCol=["1%","18%","25%","56%"];
+
+
+                $.ajax({
+                    type : 'POST',
+                    headers : {
+                        Accept : "application/json"
+                    },
+                    data:{page:1},
+                    url : contextPath+'/users/queryList',
+                    success : function(data) {
+                        console.log(data);
+
+                    },
+                    error : function(e) {
+                        console.error("error", e);
+                    }
+                });
+            }
+        </script>
 
         <div class="container" >
             <div class="page-header">
